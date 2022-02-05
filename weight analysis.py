@@ -15,13 +15,6 @@ bgg_data_sa = bgg_data[bgg_data['itemtype'] == 'standalone']
 # removing old games (before 1900)
 bgg_data_sa_recent = bgg_data_sa[bgg_data_sa['yearpublished'] >= 1900]
 
-# separate series by weight
-bgg_data_light = bgg_data_sa_recent[bgg_data_sa_recent['avgweight'] < 1]
-bgg_data_lightmed = bgg_data_sa_recent[(bgg_data_sa_recent['avgweight'] >= 1) & (bgg_data_sa_recent['avgweight'] < 2)]
-bgg_data_med = bgg_data_sa_recent[(bgg_data_sa_recent['avgweight'] >= 2) & (bgg_data_sa_recent['avgweight'] < 3)]
-bgg_data_medheavy = bgg_data_sa_recent[(bgg_data_sa_recent['avgweight'] >= 3) & (bgg_data_sa_recent['avgweight'] < 4)]
-bgg_data_heavy = bgg_data_sa_recent[(bgg_data_sa_recent['avgweight'] >= 4) & (bgg_data_sa_recent['avgweight'] < 5)]
-
 # add weight class column
 bgg_data_sa_recent['weightclass'] = bgg_data_sa_recent['avgweight'].map(np.floor)
 # grouping by weightclass
