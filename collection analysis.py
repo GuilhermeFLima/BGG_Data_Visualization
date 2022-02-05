@@ -25,7 +25,8 @@ data_max = bgg_data_sa_recent_yp.max()
 data_min = bgg_data_sa_recent_yp.min()
 
 # Series histogram
-bgg_data_sa_recent_yp.plot.hist(bins=range(data_min, data_max+2), align='mid', width=0.8)
+# bgg_data_sa_recent_yp.plot.hist(bins=range(data_min, data_max+2), align='mid', width=0.8)
+plt.hist(bgg_data_sa_recent_yp, bins=range(data_min, data_max+2), align='mid', width=0.8)
 pos = np.arange(data_min, data_max+2) + 0.4
 yearslabels = np.arange(data_min, data_max+2)
 plt.xticks(pos, yearslabels, rotation=90, alpha=0.8)
