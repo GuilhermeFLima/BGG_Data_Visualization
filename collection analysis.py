@@ -12,18 +12,20 @@ bgg_data = bgg_data[['objectname', 'baverage', 'avgweight', 'rank', 'yearpublish
 
 # remove expansions
 bgg_data_sa = bgg_data[bgg_data['itemtype'] == 'standalone']
-# pandas Series for publication years
-bgg_data_sa_yp = bgg_data_sa['yearpublished']
 # removing old games (before 1900)
-bgg_data_sa_yp_recent = bgg_data_sa_yp[bgg_data_sa['yearpublished'] >= 1900]
-data_max = bgg_data_sa_yp_recent.max()
-data_min = bgg_data_sa_yp_recent.min()
-print(bgg_data_sa_yp_recent.describe())
+bgg_data_sa_recent = bgg_data_sa[bgg_data_sa['yearpublished'] >= 1900]
+print(bgg_data_sa_recent.describe())
+# pandas Series for publication years
+bgg_data_sa_recent_yp = bgg_data_sa_recent['yearpublished']
 
 # create matplotlib figure
 plt.figure(figsize=(20, 8), dpi=80)
+
+data_max = bgg_data_sa_recent_yp.max()
+data_min = bgg_data_sa_recent_yp.min()
+
 # Series histogram
-bgg_data_sa_yp_recent.plot.hist(bins=range(data_min, data_max+2), align='mid', width=0.8)
+bgg_data_sa_recent_yp.plot.hist(bins=range(data_min, data_max+2), align='mid', width=0.8)
 pos = np.arange(data_min, data_max+2) + 0.4
 yearslabels = np.arange(data_min, data_max+2)
 plt.xticks(pos, yearslabels, rotation=90, alpha=0.8)
@@ -32,3 +34,4 @@ plt.grid(visible=True, axis='y', linestyle='--')
 plt.suptitle(name, fontsize='x-large', ha='center', weight='bold')
 plt.title('Games by Publication Date, 1900 - 2022', ha='center')
 plt.show()
+
