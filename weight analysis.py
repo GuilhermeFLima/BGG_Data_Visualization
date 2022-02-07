@@ -2,8 +2,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
-name = 'GFLima'
-file = 'GFLima_bgg_data.csv'
+name = 'Kara'
+file = 'howlsthunder_bgg_data.csv'
 # read csv file into pandas DataFrame
 bgg_data = pd.read_csv(file)
 
