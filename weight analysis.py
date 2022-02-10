@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 name = 'Kara'
-file = 'howlsthunder_bgg_data.csv'
+file = 'Data files/howlsthunder_bgg_data.csv'
 # read csv file into pandas DataFrame
 bgg_data = pd.read_csv(file)
 

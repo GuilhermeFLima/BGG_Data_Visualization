@@ -66,8 +66,10 @@ def getmechanisms(game_id: str, driver) -> list:
 
 # DATAFRAMES AND DICTIONARIES
 
-datafile = "Data files/GFLima_bgg_data.csv"
+datafile = "Data files/Weber_bgg_data.csv"
+name = "Ray&Jennie"
 #datafile = "mectest.csv"
+
 df = pd.read_csv(datafile)
 # select relevant columns and drop duplicates
 df = df[['objectname', 'objectid', 'yearpublished', 'itemtype']].drop_duplicates()
@@ -103,5 +105,10 @@ Firefox.quit()
 mechanisms_dict = dict(Counter(mechanisms_list))
 # make a Pandas Series from the dictionary
 Smec = pd.Series(mechanisms_dict)
+Smec.to_csv(name + "_mechanisms.csv")
 # print the 20 largest entries
-print(Smec.nlargest(20))
+ranked = Smec.nlargest(20).reset_index()
+ranked.set_index(ranked.index.map(lambda x: x + 1), inplace=True)
+print('Top 20 most common board game mechanisms in collection.')
+print(name)
+print(ranked)
