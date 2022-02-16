@@ -1,9 +1,18 @@
+# Based on 'simple collection publication date analysis.py'.
+# This script plots a *stacked* histogram of the publication date
+# for the games in a user's collection with colors for each weight
+# class. It expects the csv file obtained when one downloads collection
+# data from boardgamegeek.com. For an explanation on how to obtain
+# this, see https://boardgamegeek.com/wiki/page/Data_Mining
+
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
-name = 'Kara'
-file = 'Data files/howlsthunder_bgg_data.csv'
+name = 'Test'
+file = 'test_bgg_data.csv'
+
 # read csv file into pandas DataFrame
 bgg_data = pd.read_csv(file)
 
@@ -20,7 +29,14 @@ bgg_data_sa_recent['weightclass'] = bgg_data_sa_recent['avgweight'].map(np.floor
 # grouping by weightclass
 data_grouped = bgg_data_sa_recent['yearpublished'].groupby(bgg_data_sa_recent['weightclass'])
 # extracting just the dataframes from groupby object
-data_frames = [df.astype('object') for _, df in data_grouped]
+data_frames = [df.astype('object') for group, df in data_grouped]
+weightgroups = [group for group, df in data_grouped]
+
+weightnames = dict(zip([0.0, 1.0, 2.0, 3.0, 4.0],
+                       ['light', 'light - medium', 'medium', 'medium - heavy', 'heavy']
+                       ))
+
+weightgroupsnamed = [weightnames[group] for group in weightgroups]
 
 # pandas Series for publication years
 bgg_data_sa_recent_yp = bgg_data_sa_recent['yearpublished']
@@ -46,9 +62,11 @@ bggcolors2 = np.array([(82/255, 255/255, 229/255),
                        (255./255, 97./255, 48./255)])
 # divide to add hue
 bggcolors2 = bggcolors2/(1.1, 1.1, 1.1)
-
+colorofweights = dict(zip(['light', 'light - medium', 'medium', 'medium - heavy', 'heavy'],
+                          bggcolors2))
+colors = [colorofweights[groupname] for groupname in weightgroupsnamed]
 # Series histogram
-h = plt.hist(data_frames, bins=range(data_min, data_max+2), align='mid', width=0.8, stacked=True, color=bggcolors2, alpha=1.0)
+plt.hist(data_frames, bins=range(data_min, data_max+2), align='mid', width=0.8, stacked=True, color=colors, alpha=1.0)
 pos = np.arange(data_min, data_max+2) + 0.4
 yearslabels = np.arange(data_min, data_max+2)
 plt.xticks(pos, yearslabels, rotation=90, alpha=0.8)
@@ -56,7 +74,7 @@ plt.tick_params(top=False, bottom=True, left=True, right=False, labelleft=True, 
 plt.grid(visible=True, axis='y', linestyle='--')
 plt.suptitle(name, fontsize='x-large', ha='center', weight='bold')
 plt.title('Games by Publication Date and Weight, 1900 - 2022', ha='center')
-plt.legend(labels=['light', 'light - medium', 'medium', 'medium - heavy', 'heavy'], loc='upper left')
+plt.legend(labels=weightgroupsnamed, loc='upper left')
 plt.show()
 
 
