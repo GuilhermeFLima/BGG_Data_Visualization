@@ -1,9 +1,15 @@
+# This script plots a histogram of the publication date
+# for the games in a user's collection. It expects the csv
+# file obtained when one downloads collection data from
+# boardgamegeek.com. For an explanation on how to obtain
+# this, see https://boardgamegeek.com/wiki/page/Data_Mining
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
-name = 'Ray & Jennie'
-file = 'Data files/Weber_bgg_data.csv'
+name = 'Test'
+file = 'test_bgg_data.csv'
 # read csv file into pandas DataFrame
 bgg_data = pd.read_csv(file)
 
