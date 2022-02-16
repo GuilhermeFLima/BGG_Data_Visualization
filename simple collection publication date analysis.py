@@ -8,8 +8,14 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
-name = 'Test'
-file = 'test_bgg_data.csv'
+# In order to use this script on your own files, you must alter the
+# two following variables:
+#
+# 1. The user's name to be featured on the plot.
+name = "Test"
+# 2. The path to the csv file with the user's collection data:
+file = "test_bgg_data.csv"
+
 # read csv file into pandas DataFrame
 bgg_data = pd.read_csv(file)
 

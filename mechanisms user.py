@@ -1,9 +1,31 @@
+# Running this script will print a list of the top 20 most common
+# mechanisms for the games in a user's collection. It will also
+# create a csv file with two columns: one for the mechanisms and the
+# other for the number of games in which they apper for the user.
+#
+# To fetch the mechanisms of a game, we will need to access the
+# bgg website, and we do so via url requests (to find each game's
+# mechanisms page from its main page) and via a Selenium WebDriver
+# (to grab the list of mechanisms in the javascript code). Thus
+# running this script will result in the opening of an automated
+# browser window.
+#
+# The script expects the csvfile obtained when one downloads collection
+# data from boardgamegeek.com. For an explanation on how to obtain
+# this, see https://boardgamegeek.com/wiki/page/Data_Mining
+#
+# In order to use this script on your own files, you must alter the
+# two following variables:
+#
+# 1. The name tag for the csv file that will be saved as name + '_mechanisms.csv'
+name = "Test"
+# 2. The path to the csv file with the user's collection data:
+datafile = "test_bgg_data.csv"
+
+
 import pandas as pd
 import numpy as np
 from collections import Counter
-import matplotlib.pyplot as plt
-from bs4 import BeautifulSoup
-from urllib.request import urlopen
 import requests
 from selenium import webdriver
 import re
@@ -32,7 +54,7 @@ def geturl(game_id: str) -> str:
     """
     Returns the url for bgg main page of game, given id.
     Uses regular expressions.
-    :param gameid: string with the number id for game.
+    :param game_id: string with the number id for game.
     :return: bgg url string.
     """
     main_page_url = "https://boardgamegeek.com/boardgame/" + game_id
@@ -65,10 +87,6 @@ def getmechanisms(game_id: str, driver) -> list:
     return mechanisms
 
 # DATAFRAMES AND DICTIONARIES
-
-datafile = "Data files/Weber_bgg_data.csv"
-name = "Ray&Jennie"
-#datafile = "mectest.csv"
 
 df = pd.read_csv(datafile)
 # select relevant columns and drop duplicates

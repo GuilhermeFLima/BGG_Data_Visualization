@@ -1,6 +1,3 @@
-import pandas as pd
-import numpy as np
-
 # In this file we will analyse the "expression" of each board game mechanism
 # in a user's collection.
 # First we will obtain the distribution of mechanisms in bgg from the file
@@ -8,9 +5,12 @@ import numpy as np
 # Then we will also normalize the mechanism count for each user, and then calculate
 # Expression = User%/BGG%.
 
+import pandas as pd
+import numpy as np
+
 bggdf = pd.read_csv("bggmechanismscount.csv")
-userdf = pd.read_csv("Ray&Jennie_mechanisms.csv")
-name = "Ray&Jennie"
+userdf = pd.read_csv("Brett_mechanisms.csv")
+name = "Brett"
 userdf.reset_index()
 userdf.columns = ['mechanism', 'count']
 bggdf['percent'] = (bggdf['count']*100) / bggdf['count'].sum()

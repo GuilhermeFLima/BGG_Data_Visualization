@@ -1,19 +1,15 @@
-import pandas as pd
-import numpy as np
-from collections import Counter
-import matplotlib.pyplot as plt
-from bs4 import BeautifulSoup
-from urllib.request import urlopen
-import requests
-from selenium import webdriver
-import re
-import time
-
-# Here we will grab the distribution of mechanisms in bgg
+# Here we will grab the current (since mechanisms are updated by users,
+# wiki-style) distribution of game mechanisms in bgg
 # and save to bggmechanismscount.csv.
 # First get the list of mechanisms from bgg, their
 # main web pages, and then their count, which will require
 # javascript scrapping.
+
+import pandas as pd
+import requests
+from selenium import webdriver
+import re
+
 
 def getmeclist():
     url = "https://boardgamegeek.com/browse/boardgamemechanic"

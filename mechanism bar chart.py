@@ -1,11 +1,27 @@
+# This script plots a horizontal bar chart with
+# a user's percentage of game mechanisms compared
+# to the percentage in the bgg database.
+#
+# It requires both  the "Name_mechanisms.csv" file obtained
+# from running the "mechanisms user.py" script, and, for greater
+# precision, a recent "bggmechanismscount.csv" file obtained
+# from running the "mechanisms bgg.py" script.
+
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib.ticker as mtick
+
+# In order to use this script on your own files, you must alter the
+# two following variables:
+#
+# 1. The user's name to be featured on the plot.
+name = "Test"
+# 2. The path to the csv file with the user's collection data:
+file = "Test_mechanisms.csv"
+
 
 bggdf = pd.read_csv("bggmechanismscount.csv")
-userdf = pd.read_csv("Ray&Jennie_mechanisms.csv")
-name = "Ray & Jennie"
+userdf = pd.read_csv(file)
 userdf.reset_index()
 userdf.columns = ['mechanism', 'count']
 bggdf['percent'] = (bggdf['count']*100) / bggdf['count'].sum()
@@ -32,8 +48,6 @@ plt.title('Percentage of top 20 board game mechanisms\ncompared to boardgamegeek
 plt.xlabel('Percentage')
 vals = range(1, int(np.ceil(max(X2.max(), X1.max()))))
 plt.xticks(vals, labels=[str(x) + '%' for x in vals])
-#vals = users.get_xticks()
-#users.set_xticklabels(['{:,.2%}'.format(x) for x in vals])
 plt.legend(loc='center right', fontsize='large')
 plt.grid(visible=True, axis='x', linestyle='--')
 plt.tight_layout()
