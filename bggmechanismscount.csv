@@ -1,0 +1,182 @@
+,mecid,mechanism,count
+0,2073,Acting,1858
+1,2838,Action Drafting,165
+2,2001,Action Points,6458
+3,2689,Action Queue,2173
+4,2839,Action Retrieval,116
+5,2834,Action Timer,126
+6,2840,Action/Event,503
+7,2847,Advantage Token,62
+8,2916,Alliances,178
+9,2080,Area Majority / Influence,5750
+10,2046,Area Movement,4752
+11,2021,Area-Impulse,280
+12,2012,Auction/Bidding,4690
+13,2930,Auction: Dexterity,15
+14,2924,Auction: Dutch,22
+15,2932,Auction: Dutch Priority,6
+16,2918,Auction: English,4
+17,2931,Auction: Fixed Placement,13
+18,2923,Auction: Once Around,20
+19,2920,Auction: Sealed Bid,67
+20,2919,Auction: Turn Order Until Pass,41
+21,2903,Automatic Resource Growth,51
+22,2014,Betting and Bluffing,2332
+23,2957,Bias,82
+24,2999,Bingo,111
+25,2913,Bribery,69
+26,2018,Campaign / Battle Card Driven,2668
+27,2041,Card Drafting,9929
+28,2857,Card Play Conflict Resolution,662
+29,2887,Catch the Leader,93
+30,2956,Chaining,219
+31,2057,Chit-Pull System,873
+32,2928,Closed Economy Auction,13
+33,2841,Command Cards,191
+34,2013,Commodity Speculation,838
+35,2893,Communication Limits,315
+36,2883,Connections,266
+37,2922,Constrained Bidding,45
+38,2912,Contracts,298
+39,2023,Cooperative Game,9286
+40,2010,Crayon Rail System,139
+41,2854,Critical Hits and Failures,242
+42,2990,Cube Tower,26
+43,3004,Deck Construction,399
+44,2664,"Deck, Bag, and Pool Building",4176
+45,3002,Deduction,829
+46,2901,Delayed Purchase,37
+47,2072,Dice Rolling,34889
+48,2856,Die Icon Resolution,216
+49,2950,Different Dice Movement,77
+50,2984,Drafting,523
+51,2882,Elapsed Real Time Ending,84
+52,2043,Enclosure,881
+53,2875,End Game Bonuses,597
+54,2850,Events,1112
+55,2885,Finale Ending,116
+56,2860,Flicking,189
+57,2843,Follow,82
+58,2864,Force Commitment,54
+59,2978,Grid Coverage,210
+60,2676,Grid Movement,6682
+61,2040,Hand Management,18625
+62,2026,Hexagon Grid,8842
+63,2967,Hidden Movement,220
+64,2891,Hidden Roles,318
+65,2987,Hidden Victory Points,180
+66,2889,Highest-Lowest Scoring,111
+67,3000,Hot Potato,58
+68,2906,"I Cut, You Choose",88
+69,2952,Impulse Movement,53
+70,2902,Income,477
+71,2914,Increase Value of Unchosen Resources,84
+72,3003,Induction,28
+73,2837,Interrupts,153
+74,2910,Investment,138
+75,2871,Kill Steal,66
+76,2886,King of the Hill,77
+77,2980,Ladder Climbing,121
+78,3001,Layering,119
+79,2824,Legacy Game,92
+80,2039,Line Drawing,665
+81,2975,Line of Sight,823
+82,2904,Loans,84
+83,2836,Lose a Turn,298
+84,2955,Mancala,158
+85,2959,Map Addition,168
+86,2961,Map Deformation,73
+87,2960,Map Reduction,81
+88,2900,Market,303
+89,3007,Matching,416
+90,2949,Measurement Movement,1533
+91,2981,Melding and Splaying,91
+92,2047,Memory,5368
+93,2863,Minimap Resolution,58
+94,2011,Modular Board,7641
+95,2962,Move Through Deck,245
+96,2947,Movement Points,1181
+97,2963,Movement Template,103
+98,2958,Moving Multiple Units,142
+99,2965,Multiple Maps,163
+100,2927,Multiple-Lot Auction,18
+101,2851,Narrative Choice / Paragraph,185
+102,2915,Negotiation,276
+103,2081,Network and Route Building,2018
+104,2846,Once-Per-Game Abilities,226
+105,2844,Order Counters,41
+106,2911,Ownership,144
+107,2055,Paper-and-Pencil,2966
+108,2835,Passed Action Token,19
+109,2048,Pattern Building,3629
+110,2946,Pattern Movement,101
+111,2060,Pattern Recognition,3060
+112,2989,Physical Removal,70
+113,2007,Pick-up and Deliver,2457
+114,2964,Pieces as Map,109
+115,2685,Player Elimination,4394
+116,2865,Player Judge,304
+117,2078,Point to Point Movement,5387
+118,3006,Predictive Bid,48
+119,2953,Programmed Movement,135
+120,2661,Push Your Luck,3656
+121,2876,Race,1218
+122,2909,Random Production,60
+123,2855,Ratio / Combat Results Table,542
+124,2870,Re-rolling and Locking,179
+125,2831,Real-Time,580
+126,2954,Relative Movement,45
+127,2948,Resource to Move,126
+128,2003,Rock-Paper-Scissors,936
+129,2028,Role Playing,3627
+130,2892,Roles with Asymmetric Information,139
+131,2035,Roll / Spin and Move,16505
+132,2813,Rondel,150
+133,2822,Scenario / Mission / Campaign Game,2797
+134,2823,Score-and-Reset Game,129
+135,2016,Secret Unit Deployment,2038
+136,2926,Selection Order Bid,23
+137,2820,Semi-Cooperative Game,373
+138,2004,Set Collection,14096
+139,2070,Simulation,9111
+140,2020,Simultaneous Action Selection,5597
+141,2038,Singing,343
+142,2821,Single Loser Game,77
+143,3005,Slide/Push,92
+144,2819,Solo / Solitaire Game,3294
+145,2991,Speed Matching,178
+146,2940,Square Grid,921
+147,2988,Stacking and Balancing,230
+148,2853,Stat Check Resolution,102
+149,2861,Static Capture,97
+150,2005,Stock Holding,1248
+151,2027,Storytelling,3127
+152,2884,Sudden Death Ending,136
+153,2686,Take That,4294
+154,2866,Targeted Clues,72
+155,2019,Team-Based Game,4053
+156,2849,Tech Trees / Tech Tracks,146
+157,2944,Three Dimensional Movement,146
+158,2002,Tile Placement,7274
+159,2663,Time Track,436
+160,2939,Track Movement,539
+161,2008,Trading,4147
+162,2814,Traitor Game,242
+163,2009,Trick-taking,1950
+164,2888,Tug of War,75
+165,2827,Turn Order: Auction,64
+166,2829,Turn Order: Claim Action,129
+167,2830,Turn Order: Pass Order,104
+168,2828,Turn Order: Progressive,206
+169,2985,Turn Order: Random,103
+170,2833,Turn Order: Role Order,39
+171,2826,Turn Order: Stat-Based,134
+172,2079,Variable Phase Order,1592
+173,2015,Variable Player Powers,14127
+174,2897,Variable Set-up,1157
+175,2874,Victory Points as a Resource,207
+176,2017,Voting,2086
+177,2082,Worker Placement,2955
+178,2935,Worker Placement with Dice Workers,154
+179,2933,"Worker Placement, Different Worker Types",189
+180,2974,Zone of Control,592
