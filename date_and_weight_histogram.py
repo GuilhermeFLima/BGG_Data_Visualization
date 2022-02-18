@@ -76,7 +76,7 @@ def main():
     # 1. The user's name to be featured on the plot.
     name = "Test"
     # 2. The path to the csv file with the user's collection data:
-    file = "Data files/Weber_bgg_data.csv"
+    file = "test_bgg_data.csv"
 
     bgg_data = pd.read_csv(file)
     bgg_data = data_clean(bgg_data)
