@@ -1,4 +1,4 @@
-# Based on 'simple collection publication date analysis.py'.
+# Based on 'publication_date_histogram.py'.
 # This script plots a *stacked* histogram of the publication date
 # for the games in a user's collection with colors for each weight
 # class. It expects the csv file obtained when one downloads collection

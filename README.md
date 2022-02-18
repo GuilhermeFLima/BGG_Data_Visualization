@@ -17,31 +17,31 @@ matplotlib, numpy, pandas, requests, selenium
 
 ### Files:
 
-+ **publication date histogram.py**
++ **publication_date_histogram.py**
 
   Creates a simple histogram of the user's game 
   collection by publication date.![example of histogram](hist_example.png)
 
 
-+ **date and weight histogram.py**
++ **date_and_weight_histogram.py**
 
   Plots a *stacked* histogram of the publication date
   for the games in a user's collection with colors for each weight
   class.![example of histogram](weight_hist_example.png)
 
   
-+ **weight pie charts.py**
++ **weight_pie_charts.py**
 
     Plots the pie chart of the weight classes for the games in a user's collection.![example of piechart](piechart_example.png)
 
-+ **mechanisms user.py**
++ **mechanisms_user.py**
 
     Obtains the list of game mechanisms (see https://en.wikipedia.org/wiki/Game_mechanics) 
 from a user's collection, saves
 it to csv file and prints the top 20.
 
 
-+ **mechanism bar chart.py**
++ **mechanism_bar_chart.py**
 
     This script plots a horizontal bar chart with
 a user's percentage of game mechanisms compared

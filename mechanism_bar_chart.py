@@ -3,9 +3,9 @@
 # to the percentage in the bgg database.
 #
 # It requires both  the "Name_mechanisms.csv" file obtained
-# from running the "mechanisms user.py" script, and, for greater
+# from running the "mechanisms_user.py" script, and, for greater
 # precision, a recent "bggmechanismscount.csv" file obtained
-# from running the "mechanisms bgg.py" script.
+# from running the "mechanisms_bgg.py" script.
 
 import pandas as pd
 import numpy as np
@@ -15,9 +15,9 @@ import matplotlib.pyplot as plt
 # two following variables:
 #
 # 1. The user's name to be featured on the plot.
-name = "Test"
+name = "Example"
 # 2. The path to the csv file with the user's collection data:
-file = "Test_mechanisms.csv"
+file = "GFLima_mechanisms.csv"
 
 
 bggdf = pd.read_csv("bggmechanismscount.csv")
