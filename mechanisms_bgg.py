@@ -11,11 +11,18 @@ from selenium import webdriver
 import re
 
 
+def main():
+    # getting the list of board game mechanisms from bgg
+    meclist = getmeclist()
+    mecdf = mechanism_counter(meclist)
+    mecdf.to_csv("bggmechanismscount.csv")
+    return None
+
+
 def getmeclist():
     url = "https://boardgamegeek.com/browse/boardgamemechanic"
     page = requests.get(url)
     page_text = page.text
-
     id_pattern = r"/boardgamemechanic/([\d]+)/[\w-]+\"[\s]*>([\w:\s\-,/]+)<"
     id_regex = re.compile(id_pattern)
     id_find = id_regex.findall(page_text)
@@ -43,22 +50,28 @@ def findcount(mecid: str, driver) -> int:
     count = int(count.replace(',', ''))
     return count
 
-# getting the list of board game mechanisms from bgg
-meclist = getmeclist()
-# create dataframe
-mecdf = pd.DataFrame(meclist)
-# rename columns
-mecdf.columns = ['mecid', 'mechanism']
-# open browser
-Firefox = webdriver.Firefox()
 
-countlist = []
-for i, row in mecdf.iterrows():
-    id = row['mecid']
-    count = findcount(id, Firefox)
-    countlist.append(count)
+def mechanism_counter(list_of_mechanisms):
+    # create dataframe
+    mecdf = pd.DataFrame(list_of_mechanisms)
+    # rename columns
+    mecdf.columns = ['mecid', 'mechanism']
+    # open browser
+    Firefox = webdriver.Firefox()
+    countlist = []
+    for i, row in mecdf.iterrows():
+        mec_id = row['mecid']
+        count = findcount(mec_id, Firefox)
+        countlist.append(count)
 
-# close browser
-Firefox.quit()
-mecdf['count'] = countlist
-mecdf.to_csv("bggmechanismscount.csv")
+    # close browser
+    Firefox.quit()
+    mecdf['count'] = countlist
+    return mecdf
+
+
+if __name__ == '__main__':
+    main()
+
+
+
