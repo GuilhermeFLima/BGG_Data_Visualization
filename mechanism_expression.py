@@ -8,9 +8,11 @@
 import pandas as pd
 import numpy as np
 
+# need to refactor this...
+
 bggdf = pd.read_csv("bggmechanismscount.csv")
-userdf = pd.read_csv("Brett_mechanisms.csv")
-name = "Brett"
+userdf = pd.read_csv("Test_mechanisms.csv")
+name = "Test"
 userdf.reset_index()
 userdf.columns = ['mechanism', 'count']
 bggdf['percent'] = (bggdf['count']*100) / bggdf['count'].sum()

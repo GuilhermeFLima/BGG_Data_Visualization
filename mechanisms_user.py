@@ -60,8 +60,6 @@ def main():
     return None
 
 
-
-
 def geturl(game_id: str) -> str:
     """
     Returns the url for bgg main page of game, given id.
